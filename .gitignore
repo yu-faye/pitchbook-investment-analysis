@@ -1,0 +1,36 @@
+# Large CSV data files
+*.csv
+Company.csv
+Deal.csv
+Investor.csv
+
+# Stata files
+*.dta
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+
+# Old/backup files
+old/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
