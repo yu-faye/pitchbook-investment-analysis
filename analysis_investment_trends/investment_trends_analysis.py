@@ -17,11 +17,13 @@ company_ids = [
     "697387-24",   # ThingX
     "183205-63",   # Flow Neuroscience
     "56236-96",    # Catapult Sports
-    "459812-35",   # Coros
     "65652-22",    # GOQii
     "107433-19",   # Empatica
     "171678-43",   # Sensifai
-    "494786-80"    # Playmaker
+    "494786-80",   # Playmaker
+    "50982-94",    # Fitbit
+    "100191-79",   # Zepp Health
+    "61931-08"     # Peloton
 ]
 
 company_names = {
@@ -32,11 +34,13 @@ company_names = {
     "697387-24": "ThingX",
     "183205-63": "Flow Neuroscience",
     "56236-96": "Catapult Sports",
-    "459812-35": "Coros",
     "65652-22": "GOQii",
     "107433-19": "Empatica",
     "171678-43": "Sensifai",
-    "494786-80": "Playmaker"
+    "494786-80": "Playmaker",
+    "50982-94": "Fitbit",
+    "100191-79": "Zepp Health",
+    "61931-08": "Peloton"
 }
 
 print("Loading Deal data...")
@@ -44,19 +48,19 @@ print("Loading Deal data...")
 chunk_size = 100000
 deals_list = []
 
-for chunk in pd.read_csv('Deal.csv', chunksize=chunk_size, low_memory=False):
+for chunk in pd.read_csv('../Deal.csv', chunksize=chunk_size, low_memory=False):
     # Filter for our companies
     filtered = chunk[chunk['CompanyID'].isin(company_ids)]
     if len(filtered) > 0:
         deals_list.append(filtered)
 
 deals = pd.concat(deals_list, ignore_index=True)
-print(f"Found {len(deals)} deals for the 12 companies")
+print(f"Found {len(deals)} deals for the 14 companies")
 
 # Load company data
 print("Loading Company data...")
 company_chunks = []
-for chunk in pd.read_csv('Company.csv', chunksize=chunk_size, low_memory=False):
+for chunk in pd.read_csv('../Company.csv', chunksize=chunk_size, low_memory=False):
     filtered = chunk[chunk['CompanyID'].isin(company_ids)]
     if len(filtered) > 0:
         company_chunks.append(filtered)
@@ -78,7 +82,7 @@ deals['company_name'] = deals['CompanyID'].map(company_names)
 deals = deals.sort_values('date')
 
 print("\n" + "="*80)
-print("INVESTMENT TRENDS ANALYSIS FOR 12 WEARABLE TECH COMPANIES")
+print("INVESTMENT TRENDS ANALYSIS FOR 14 WEARABLE TECH COMPANIES")
 print("="*80)
 
 # 1. ENTRY TRENDS - Initial Funding & Early Stages
@@ -284,7 +288,7 @@ for company_id in companies_list:
 ax.set_yticks(range(len(companies_list)))
 ax.set_yticklabels([company_names[cid] for cid in companies_list])
 ax.set_xlabel('Year', fontsize=12)
-ax.set_title('Investment Timeline for 12 Companies\n(Bubble size represents funding amount)', 
+ax.set_title('Investment Timeline for 14 Companies\n(Bubble size represents funding amount)', 
              fontweight='bold', fontsize=14)
 ax.grid(alpha=0.3)
 
