@@ -16,13 +16,13 @@ GOQii
 "65652-22"
 Empatica
 "107433-19"
-Sensifai
-"171678-43"
-Playmaker
-"494786-80"
+Playermaker
+"142343-92"
 Fitbit
 "50982-94"
 Zepp Health
 "100191-79"
 Peloton
 "61931-08"
+
+Total Valuation Sum: $20.01B

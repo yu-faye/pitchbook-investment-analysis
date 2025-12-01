@@ -1,0 +1,613 @@
+{
+  "61931-08": [
+    {
+      "acquirer": "Peloton",
+      "target_company": "Altima Dental Canada",
+      "target_id": "133973-11",
+      "deal_date": "08/15/2022",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by Heartland Dental, via its financial sponsors Kohlberg Kravis Roberts, Ontario Teachers' Pension Plan and Peloton Capital Management, through an LBO on August 15, 2022 for an undisclosed amount.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "Grenova",
+      "target_id": "232483-96",
+      "deal_date": "03/04/2022",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by Peloton Equity, Hamilton Lane, Morgan Stanley and Mr. Ali Safavi through an LBO on March 4, 2022 for an undisclosed amount. As a result of the transaction, the company was recapitalized. The transaction is anticipated to enable the company to accelerate its sales and marketing efforts, launch additional products and build out its presence globally.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "ZeroFox",
+      "target_id": "57860-56",
+      "deal_date": "08/04/2022",
+      "deal_type": "PIPE",
+      "deal_synopsis": "Blue Venture Fund, Peloton Equity, Victory Park Capital, New Enterprise Associates, Highland Capital Partners, Forgepoint Capital, Alsop Louie Partners, Monarch Alternative Capital and Corbin Capital Partners acquired a 12.% stake in the company (NAS: ZFOX) on August 4, 2022 through a private placement.",
+      "deal_size": "170.0"
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "Clinique De Fertilite Conceptia Fertility Clinic",
+      "target_id": "382907-80",
+      "deal_date": "06/21/2021",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by The Fertility Partners, via its financial sponsors Peloton Capital Management, The Eights, Normanby Capital and Asia Principal Capital, through an LBO on June 21, 2021, for an undisclosed amount.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "Atlas (Electronics)",
+      "target_id": "61682-41",
+      "deal_date": "01/01/2020",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Peloton (NAS: PTON) for an undisclosed amount in 2020.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "Aiqudo",
+      "target_id": "181616-32",
+      "deal_date": "02/09/2021",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Peloton (NAS: PTON) for $57.7 million on February 9, 2021.",
+      "deal_size": "57.7"
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "Otari Mats",
+      "target_id": "399005-74",
+      "deal_date": "12/14/2020",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Peloton (NAS: PTON) for an undisclosed amount on December 14, 2020.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "Generation Fertility",
+      "target_id": "458687-08",
+      "deal_date": "01/13/2021",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by The Fertility Partners, via its financial sponsors Peloton Capital Management, Normanby Capital, Asia Principal Capital, HEAL Partners Management and The Eights, through an LBO on January 13, 2021 for an undisclosed amount.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "Aurora Reproductive Care",
+      "target_id": "379244-89",
+      "deal_date": "12/22/2020",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by The Fertility Partners, via its financial sponsors Normanby Capital, Peloton Capital Management, The Eights, Asia Principal Capital and HEAL Partners Management, through an LBO on December 22, 2020 for an undisclosed amount.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "Airway Oxygen",
+      "target_id": "227581-12",
+      "deal_date": "09/30/2020",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by AeroCare Holdings, via its financial sponsors Lunsford Capital, SkyKnight Capital, SV Health Investors, Peloton Equity, and Morgan Stanley, through an LBO on September 30, 2020 for an undisclosed sum.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "Clinique Ovo",
+      "target_id": "350436-70",
+      "deal_date": "08/05/2020",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by The Fertility Partners, via its financial sponsors Asia Principal Capital, HEAL Partners Management, The Eights, Peloton Capital Management and BMO Financial Group, through an LBO on August 5, 2020, for an undisclosed amount. The company will retain a high level of independence and complete clinical autonomy while benefiting from the range of support services The Fertility Partners can offer.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "ExproSoft",
+      "target_id": "43027-93",
+      "deal_date": "05/05/2020",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by Peloton Computer Enterprises, via its financial sponsors HarbourVest Partners, Silver Lake Management and TriWest Capital Partners through an LBO on May 5, 2020 for an undisclosed sum. The deal will enable Peloton Computer Enterprises to improve the customer's ability to carry out the analysis of operational data, improve decision-making and optimize opportunities.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "CPAPdirect",
+      "target_id": "266042-71",
+      "deal_date": "09/26/2017",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by AeroCare Holdings, via its financial sponsors SV Health Investors and Peloton Equity, through an LBO on September 26, 2017 for an undisclosed sum.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "Home Care Medical",
+      "target_id": "265485-88",
+      "deal_date": "",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by AeroCare Holdings, via its financial sponsors SV Health Investors, Morgan Stanley, Lunsford Capital and Peloton Equity, through an LBO on an undisclosed date.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "BSA Health System",
+      "target_id": "129933-55",
+      "deal_date": "01/03/2013",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by Ardent Health Services, via its financial sponsors Welsh, Carson, Anderson & Stowe, Ridgemont Equity Partners, RFE Investment Partners, Ferrer Freeman & Company, Peloton Equity and FCA Venture Partners through a $125 million LBO on January 3, 2013.",
+      "deal_size": "125.0"
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "Neurotic Media",
+      "target_id": "56329-66",
+      "deal_date": "06/27/2018",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Peloton for $30 million on June 27, 2018.",
+      "deal_size": "30.0"
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "Esgaia",
+      "target_id": "458423-65",
+      "deal_date": "",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company is in talks to be acquired by Glass Lewis, via its financial sponsor Peloton Capital Management, through an LBO on March 11, 2025 for an undisclosed amount. The acquisition will accelerates Glass Lewis' strategy to more holistically serve clients in markets like Europe and Australia where the combination of informed proxy voting and issuer engagement is integral to investors stewardship efforts.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "CareJourney",
+      "target_id": "135240-67",
+      "deal_date": "06/26/2024",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by Arcadia Solutions, via its financial sponsors Cigna Ventures, Merck Global Health Innovation Fund, Peloton Equity, Revelation Partners, Zaffre Investments, and Vista Credit Partners, through an LBO on June 26, 2024 for an undisclosed amount. The acquisition aims to blend Arcadia Solutions' next-generation healthcare data platform, proprietary analytics, and workflow tools with the company's cost, quality, and benchmark data.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "AeroCare Holdings",
+      "target_id": "11807-92",
+      "deal_date": "04/08/2016",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by Peloton Equity and SV Health Investors through an LBO on April 8, 2016 for an undisclosed sum.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "Sage Technologies",
+      "target_id": "118704-34",
+      "deal_date": "06/24/2015",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by Arcadia Healthcare, via its financial sponsors Peloton Equity, Morgan Stanley Alternative Investment Partners, Zaffre Investments, Escalate Capital Partners, UnitedHealth Group Ventures, Ferrer Freeman & Company and Escalate Capital Partners, through a $28 million LBO on June 24, 2015.",
+      "deal_size": "28.0"
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "ClubCom",
+      "target_id": "53977-96",
+      "deal_date": "01/23/2004",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Precor, a subsidiary of Peloton (Recreational Goods) (NAS: PTON), for an estimated $22 million on January 23, 2004.",
+      "deal_size": "22.0"
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "HealthPlanOne",
+      "target_id": "52968-61",
+      "deal_date": "12/17/2014",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by Peloton Equity, Kevin Hill, Chan Wheeler and its management through an LBO on December 17, 2014 for an undisclosed amount.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "UPWalker",
+      "target_id": "157901-05",
+      "deal_date": "02/08/2023",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by Journey Health & Lifestyle, via its financial sponsors Peloton Equity, Grindstone Partners and BPEA Private Equity, through an LBO on February 8, 2023 for an undisclosed amount. The acquisition will support Journey Health & Lifestyle to help seniors live more comfortable, active and connected lives.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "Ottawa Fertility Centre",
+      "target_id": "512327-08",
+      "deal_date": "02/07/2022",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by The Fertility Partners, via its financial sponsors HEAL Partners, Peloton Capital Management, Normanby Capital, Asia Principal Capital, BMO Financial Group and The Eights, through an LBO on February 7, 2022 for an undisclosed amount.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Peloton",
+      "target_company": "Illume Fertility",
+      "target_id": "502699-87",
+      "deal_date": "04/06/2022",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by The Fertility Partners, via its financial sponsors The Eights, Peloton Capital Management, HEAL Partners, Normanby Capital, BMO Financial Group and Asia Principal Capital, through an LBO on April 6, 2022 for an undisclosed amount.",
+      "deal_size": ""
+    }
+  ],
+  "110783-26": [
+    {
+      "acquirer": "Oura",
+      "target_company": "Picaboo",
+      "target_id": "51337-72",
+      "deal_date": "04/16/2022",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Entourageyearbooks for an undisclosed amount on April 16, 2022.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "The Behavioural Insights Team",
+      "target_id": "170024-14",
+      "deal_date": "12/13/2021",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Nesta for GBP 15.4 million on December 13, 2021. The acquisition gives each organization to gain and exchange world class technical expertise in behavioural science, experimentation, design and data science.",
+      "deal_size": "20.53241166"
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "Silatronix",
+      "target_id": "53877-43",
+      "deal_date": "11/01/2021",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Koura for an undisclosed amount on November 1, 2021.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "CloudSkiff",
+      "target_id": "327397-78",
+      "deal_date": "10/29/2021",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Snyk for an undisclosed amount on October 29, 2021. The acquisition will help the acquirer to accelerate add these enhanced drift detection capabilities to Snyk IaC, while also continuing to encourage and facilitate the open source development of driftctl.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "Cannabliss & Co.",
+      "target_id": "481361-41",
+      "deal_date": "01/01/2018",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by High Street Capital Partners, via its financial sponsors Stage 1 Ventures and Entourage Effect Capital, through an LBO on an undisclosed date.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "Tapit",
+      "target_id": "61964-65",
+      "deal_date": "08/10/2017",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Geronimo (Australia) for an undisclosed amount on August 10, 2017. The acquisition will encourage clients to go deeper into their thinking about how to connect with customers and this will have a positive impact on overall business.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "CannTx",
+      "target_id": "223642-18",
+      "deal_date": "10/29/2021",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Entourage Health (TSX: ENTG) for $11.93 million on October 29, 2021.",
+      "deal_size": "11.93"
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "Predictive Discovery",
+      "target_id": "100611-46",
+      "deal_date": "",
+      "deal_type": "PIPE",
+      "deal_synopsis": "Acorn Capital acquired a 12.7% stake in the company (ASX:PDI) for AUD 2.6 million on an undisclosed date through a private placement. The funds will be used to pursue its exploration activities in Burkina Faso that have yielded highly encouraging results in the 2011 drilling programs to date.",
+      "deal_size": "2.01709775"
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "Terradiol",
+      "target_id": "465468-13",
+      "deal_date": "08/01/2018",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company, a subsidiary of New Amsterdam Distributors, was acquired by Acreage Holdings, via its financial sponsors Entourage Effect Capital and Stage 1 Ventures, through an LBO in August 2018, for an undisclosed amount.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "Avail Support",
+      "target_id": "222734-08",
+      "deal_date": "02/23/2021",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by CentralReach, via its financial sponsor Insight Partners, through an LBO on February 23, 2021 for an undisclosed sum. It said the acquisition of Avail Support would allow them to disrupt the behavioural health software market and that the alliance would create the most robust platform to enable more independent living of neurodiverse individuals of any age.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "Prime Wellness of Connecticut",
+      "target_id": "459883-00",
+      "deal_date": "08/15/2018",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by Acreage Holdings, via its financial sponsors Stage 1 Ventures and Entourage Effect Capital, through an LBO on August 15, 2018 for an undisclosed amount.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "Wellness and Pain Management Connection",
+      "target_id": "459882-82",
+      "deal_date": "05/01/2018",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by Acreage Holdings, via its financial sponsors Entourage Effect Capital, Northwood Ventures & Stage 1 Ventures, through an LBO in May 2018 for an undisclosed sum.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "Swipe Wallet",
+      "target_id": "436728-52",
+      "deal_date": "04/13/2020",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Binance for an undisclosed amount on April 13, 2020. The aim of the acquisition is to help push the use of cryptocurrencies into the mainstream by encouraging payments with cryptocurrencies through traditional financial systems such as debit cards.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "Atalo Health",
+      "target_id": "164075-50",
+      "deal_date": "06/23/2020",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Entoura for an undisclosed amount on June 23, 2020.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "myOptions",
+      "target_id": "62729-11",
+      "deal_date": "03/28/2017",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Encoura, a subsidiary of ACT, for an undisclosed amount on March 28, 2017.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "Acreage Holdings",
+      "target_id": "224398-36",
+      "deal_date": "01/01/2015",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by Entourage Effect Capital through an LBO in 2015 for an undisclosed sum.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "Plexchat",
+      "target_id": "150075-73",
+      "deal_date": "07/11/2018",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Warner Bros. Entertainment, a subsidiary of WarnerMedia, for an undisclosed amount on July 11, 2018. The acquisition will enable Warner Bros to elevates the social experience within their suite of mobile titles by integrating enhanced community features and chat capabilities to encourage and facilitate increased player engagement.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "Vasily",
+      "target_id": "97638-58",
+      "deal_date": "10/20/2017",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by ZOZO (TKS: 3092) for an undisclosed amount on October 20, 2017. The acquisition will help Start Today and Vasily to jointly conduct a measure to encourage sales leveraging items and user preference data collected by both companies respectively.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "Wholesale Investor",
+      "target_id": "180978-85",
+      "deal_date": "10/17/2017",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by BMY Group for AUD 1.4 million on October 17, 2017. The acquisition helps the acquirer to encourage more cross-border business between Australia and China.",
+      "deal_size": "1.10186275"
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "Voltalis",
+      "target_id": "57784-15",
+      "deal_date": "03/13/2013",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Ms. P\u00e2ris Mouratoglou and Mr. David Corchia on March 13, 2013 for an undisclosed amount.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "Sharklet (Other Commercial Products)",
+      "target_id": "55754-20",
+      "deal_date": "05/16/2017",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Peaceful Union for an undisclosed amount on May 16, 2017. The acquisition will enable the company to accelerate the development of medical devices where chemical-free bacterial inhibition is desired as well as high-touch surfaces prone to bacterial contamination and the development of a newly enhanced wound dressing technology to encourage healing.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "Neuro-ID",
+      "target_id": "112792-60",
+      "deal_date": "08/12/2024",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Experian (LON: EXPN) for $145 million on August 12, 2024. The acquisition will enhance Experian's existing fraud prevention suite by providing new capabilities around digital behavioural signals and analytics.",
+      "deal_size": "145.0"
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "Proxy",
+      "target_id": "164273-95",
+      "deal_date": "05/09/2023",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Oura for an undisclosed amount on May 9, 2023.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "TMW",
+      "target_id": "525500-65",
+      "deal_date": "04/17/2023",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company was acquired by GO Capital, Mr. Guillaume Bourtourault and Mr. Thierry Satg\u00e9 through an LBO on April 17, 2023 for an undisclosed amount.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "MJ Freeway",
+      "target_id": "519127-39",
+      "deal_date": "01/27/2023",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was in talks to be acquired by POSaBIT (CNQ: PBIT) for an undisclosed amount on January 27, 2023. Subsequently, the deal was canceled. Entourage Effect Capital also participated in this round.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Oura",
+      "target_company": "Picaboo",
+      "target_id": "51337-72",
+      "deal_date": "08/17/2022",
+      "deal_type": "Buyout/LBO",
+      "deal_synopsis": "The company, a subsidiary of Entourageyearbooks, was acquired by Edge Imaging, via its financial sponsor Walter Capital Partners, through an LBO on August 17, 2022 for an undisclosed amount.",
+      "deal_size": ""
+    }
+  ],
+  "458417-44": [
+    {
+      "acquirer": "Ultrahuman",
+      "target_company": "Lazy Co.",
+      "target_id": "494902-90",
+      "deal_date": "04/12/2022",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Ultrahuman for an undisclosed amount on April 12, 2022. The acquisition allows Ultrahuman to expand the set of real-time biomarkers like glucose that can reveal the effects of various food items on users' metabolic health, complementing the current wearable Ultrahuman M1.",
+      "deal_size": ""
+    }
+  ],
+  "64325-80": [
+    {
+      "acquirer": "Whoop",
+      "target_company": "PUSH (Electronic Equipment and Instruments)",
+      "target_id": "97474-15",
+      "deal_date": "09/02/2021",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Whoop for an undisclosed amount on September 2, 2021. With the acquisition, the Whoop platform will be equipped with more hardware, software and analytics that can provide feedback on training activities and wellness.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Whoop",
+      "target_company": "Touchfone",
+      "target_id": "108760-69",
+      "deal_date": "12/19/2016",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by ScoopWhoop Media for an undisclosed amount on December 19, 2016. The acquisition will help ScoopWhoop in boosting the advertising offerings with the help of targeted video ads.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Whoop",
+      "target_company": "AnyQuestion",
+      "target_id": "498226-69",
+      "deal_date": "11/30/2023",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Whoop for an undisclosed amount on November 30, 2023.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Whoop",
+      "target_company": "XOsphere",
+      "target_id": "57648-07",
+      "deal_date": "09/23/2008",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Whoop Mobile for an undisclosed sum on September 23, 2008. Whoop Mobile is backed by Supply Chain Ventures.",
+      "deal_size": ""
+    }
+  ],
+  "494786-80": [
+    {
+      "acquirer": "Playmaker",
+      "target_company": "Yardbarker",
+      "target_id": "51228-82",
+      "deal_date": "07/26/2021",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company , a subsidiary of Fox Sports was acquired by Playmaker (Media and Information Services (B2B)) (TSX: PMKR) for $24 million on July 27, 2021.",
+      "deal_size": "24.0"
+    },
+    {
+      "acquirer": "Playmaker",
+      "target_company": "juanfutbol",
+      "target_id": "158508-19",
+      "deal_date": "08/02/2022",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Playmaker (TSX: PMKR) for an estimated $1.73 million on August 3, 2022. The company will receive a contingent payment of $1.2 million upon completion of revenue and performance targets. The total consideration consists of a cash payment of $400,000 and the issuance of 421,754 common shares on closing.",
+      "deal_size": "1.73"
+    }
+  ],
+  "183205-63": [
+    {
+      "acquirer": "Flow Neuroscience",
+      "target_company": "Halo (Therapeutic Devices)",
+      "target_id": "62772-85",
+      "deal_date": "02/05/2021",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Flow Neuroscience for an undisclosed amount on February 5, 2021.",
+      "deal_size": ""
+    }
+  ],
+  "50982-94": [
+    {
+      "acquirer": "Fitbit",
+      "target_company": "Doki Technologies",
+      "target_id": "177246-55",
+      "deal_date": "05/10/2020",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Fitbit (US) (NYS: FIT) for an undisclosed amount on May 10, 2020.",
+      "deal_size": ""
+    },
+    {
+      "acquirer": "Fitbit",
+      "target_company": "Twine Health",
+      "target_id": "103301-11",
+      "deal_date": "02/01/2018",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Fitbit (NYSE: FIT) for $16.7 million in February 2018. With this acquisition, the acquirer further extends its reach into healthcare and lays the foundation to expand its offerings to health plans, health systems and self-insured employers, while creating opportunities to increase subscription-based revenue.",
+      "deal_size": "16.7"
+    },
+    {
+      "acquirer": "Fitbit",
+      "target_company": "Coin",
+      "target_id": "60355-90",
+      "deal_date": "05/12/2016",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Fitbit (NYSE: FIT) for US $7 million on May 12, 2016.",
+      "deal_size": "7.0"
+    },
+    {
+      "acquirer": "Fitbit",
+      "target_company": "Vector Watch",
+      "target_id": "103352-86",
+      "deal_date": "01/10/2017",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Fitbit (NYSE: FIT) for $15 million in December 2016.",
+      "deal_size": "15.0"
+    },
+    {
+      "acquirer": "Fitbit",
+      "target_company": "Pebble Watch",
+      "target_id": "54287-02",
+      "deal_date": "12/06/2016",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company failed and was subsequently acquired by Fitbit (NYSE: FIT) for $23.4 million in December 2016. Fitbit acquired the company's key personal and intellectual property related to software and firmware development. The acquisition will facilitate faster delivery of new products, features and functionality for Fitbit.",
+      "deal_size": "23.4"
+    },
+    {
+      "acquirer": "Fitbit",
+      "target_company": "FitStar Labs",
+      "target_id": "55807-93",
+      "deal_date": "03/05/2015",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Fitbit (NYSE: FIT) for $32.5 million on March 5, 2015. Fitbit is backed by several venture investors. The payment consisted of $11.5 million in cash, $13.6 million in stock, valued at $19.25 per share and $7.7 million in contingent considerations.",
+      "deal_size": "32.5"
+    }
+  ],
+  "56236-96": [
+    {
+      "acquirer": "Catapult Sports",
+      "target_company": "XOS Digital",
+      "target_id": "50985-19",
+      "deal_date": "08/11/2016",
+      "deal_type": "Merger/Acquisition",
+      "deal_synopsis": "The company was acquired by Catapult Sports (ASX:CAT) for $80 million on August 11, 2016. The acquisition would expand the company's product offerings and its footprint in the United States.",
+      "deal_size": "80.0"
+    }
+  ],
+  "142343-92": []
+}

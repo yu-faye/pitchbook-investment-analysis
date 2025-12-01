@@ -19,8 +19,7 @@ company_ids = [
     "56236-96",    # Catapult Sports - IPO 2014
     "65652-22",    # GOQii
     "107433-19",   # Empatica
-    "171678-43",   # Sensifai
-    "494786-80",   # Playmaker
+    "142343-92",   # Playermaker
     "50982-94",    # Fitbit - IPO 2015
     "100191-79",   # Zepp Health - IPO 2018
     "61931-08"     # Peloton - IPO 2019
@@ -36,8 +35,7 @@ company_names = {
     "56236-96": "Catapult Sports",
     "65652-22": "GOQii",
     "107433-19": "Empatica",
-    "171678-43": "Sensifai",
-    "494786-80": "Playmaker",
+    "142343-92": "Playermaker",
     "50982-94": "Fitbit",
     "100191-79": "Zepp Health",
     "61931-08": "Peloton"
@@ -207,6 +205,168 @@ for stat in company_stats:
     print(f"{stat['name']:<20} | {stat['status']:<25} | {stat['years_active']:<12.1f} | {stat['num_rounds']:<7} | {stat['latest_round']:<15} | {last_funding}")
 
 print("\n" + "="*100)
+print("4. VALUATION & FUNDING CORRELATION TO EXIT SUCCESS")
+print("="*100)
+
+print("\n📊 ANALYZING RELATIONSHIP BETWEEN FUNDING/VALUATION AND EXIT OUTCOMES...")
+print("-"*100)
+
+# Calculate total funding raised for each company before exit
+company_funding_stats = {}
+for comp_id in company_ids:
+    comp_name = company_names[comp_id]
+    comp_deals = deals[deals['CompanyID'] == comp_id].sort_values('date')
+    
+    # Calculate total funding raised
+    total_funding = comp_deals['DealSize'].sum()
+    num_rounds = len(comp_deals)
+    
+    # Get latest pre-exit valuation (if available)
+    non_exit_deals = comp_deals[~comp_deals['DealType'].isin(exit_types)]
+    latest_pre_exit_val = None
+    if len(non_exit_deals) > 0:
+        valuations = non_exit_deals['PostValuation'].dropna()
+        if len(valuations) > 0:
+            latest_pre_exit_val = valuations.iloc[-1]
+    
+    # Get exit info if exists
+    exit_deal = comp_deals[comp_deals['DealType'].isin(exit_types)]
+    exit_valuation = None
+    exit_year = None
+    exit_type = None
+    if len(exit_deal) > 0:
+        exit_valuation = exit_deal.iloc[0]['PostValuation']
+        exit_year = exit_deal.iloc[0]['year']
+        exit_type = exit_deal.iloc[0]['DealType']
+    
+    # Calculate funding before exit
+    funding_before_exit = total_funding
+    if len(exit_deal) > 0 and pd.notna(exit_deal.iloc[0]['date']):
+        pre_exit_deals = comp_deals[comp_deals['date'] < exit_deal.iloc[0]['date']]
+        funding_before_exit = pre_exit_deals['DealSize'].sum()
+    
+    company_funding_stats[comp_id] = {
+        'name': comp_name,
+        'total_funding': total_funding,
+        'funding_before_exit': funding_before_exit,
+        'num_rounds': num_rounds,
+        'latest_pre_exit_val': latest_pre_exit_val,
+        'exit_valuation': exit_valuation,
+        'exit_year': exit_year,
+        'exit_type': exit_type,
+        'has_exited': comp_id in exited_company_ids
+    }
+
+print("\n1️⃣ FUNDING & VALUATION SUMMARY (All Companies):")
+print("-"*100)
+print(f"{'Company':<20} | {'Status':<10} | {'Total Raised':<15} | {'# Rounds':<10} | {'Pre-Exit Val':<15} | {'Exit Val':<15} | {'Exit Type':<12}")
+print("-"*100)
+
+for comp_id in company_ids:
+    stat = company_funding_stats[comp_id]
+    status = "EXITED" if stat['has_exited'] else "Private"
+    total_raised = f"${stat['total_funding']:.1f}M" if pd.notna(stat['total_funding']) else "N/A"
+    pre_val = f"${stat['latest_pre_exit_val']:.1f}M" if pd.notna(stat['latest_pre_exit_val']) else "N/A"
+    exit_val = f"${stat['exit_valuation']:.1f}M" if pd.notna(stat['exit_valuation']) else "N/A"
+    exit_type_str = stat['exit_type'] if stat['exit_type'] else "N/A"
+    
+    print(f"{stat['name']:<20} | {status:<10} | {total_raised:<15} | {stat['num_rounds']:<10} | {pre_val:<15} | {exit_val:<15} | {exit_type_str:<12}")
+
+# Analyze exited companies in detail
+exited_stats = [stat for stat in company_funding_stats.values() if stat['has_exited']]
+private_stats = [stat for stat in company_funding_stats.values() if not stat['has_exited']]
+
+print("\n2️⃣ EXITED COMPANIES - DETAILED ANALYSIS:")
+print("-"*100)
+
+for stat in exited_stats:
+    print(f"\n{stat['name'].upper()}:")
+    print(f"  Exit Year: {stat['exit_year']}")
+    print(f"  Exit Type: {stat['exit_type']}")
+    print(f"  Total Funding Raised: ${stat['funding_before_exit']:.2f}M" if pd.notna(stat['funding_before_exit']) else "  Total Funding Raised: N/A")
+    print(f"  Exit Valuation: ${stat['exit_valuation']:.2f}M" if pd.notna(stat['exit_valuation']) else "  Exit Valuation: N/A")
+    
+    if pd.notna(stat['funding_before_exit']) and pd.notna(stat['exit_valuation']) and stat['exit_valuation'] > 0:
+        multiple = stat['exit_valuation'] / stat['funding_before_exit']
+        print(f"  💰 Exit Multiple (Exit Val / Funding): {multiple:.2f}x")
+    
+    if pd.notna(stat['latest_pre_exit_val']) and pd.notna(stat['exit_valuation']):
+        val_change = stat['exit_valuation'] - stat['latest_pre_exit_val']
+        val_change_pct = (val_change / stat['latest_pre_exit_val']) * 100 if stat['latest_pre_exit_val'] > 0 else 0
+        print(f"  Latest Pre-Exit Valuation: ${stat['latest_pre_exit_val']:.2f}M")
+        print(f"  📈 Valuation Change at Exit: ${val_change:.2f}M ({val_change_pct:+.1f}%)")
+
+print("\n3️⃣ CORRELATION ANALYSIS:")
+print("-"*100)
+
+# Calculate correlation metrics for exited companies
+exited_with_data = [s for s in exited_stats if pd.notna(s['funding_before_exit']) and pd.notna(s['exit_valuation'])]
+if len(exited_with_data) >= 2:
+    funding_amounts = [s['funding_before_exit'] for s in exited_with_data]
+    exit_valuations = [s['exit_valuation'] for s in exited_with_data]
+    
+    # Calculate correlation
+    if len(funding_amounts) >= 2:
+        correlation = np.corrcoef(funding_amounts, exit_valuations)[0, 1]
+        print(f"\n📊 Funding Amount vs Exit Valuation Correlation: {correlation:.3f}")
+        if abs(correlation) > 0.7:
+            print("   → Strong correlation: More funding typically leads to higher exit valuations")
+        elif abs(correlation) > 0.4:
+            print("   → Moderate correlation: Some relationship between funding and exit value")
+        else:
+            print("   → Weak correlation: Exit value not strongly tied to funding amount")
+
+# Compare exited vs non-exited companies
+exited_avg_funding = np.mean([s['total_funding'] for s in exited_stats if pd.notna(s['total_funding'])])
+private_avg_funding = np.mean([s['total_funding'] for s in private_stats if pd.notna(s['total_funding'])])
+exited_avg_rounds = np.mean([s['num_rounds'] for s in exited_stats])
+private_avg_rounds = np.mean([s['num_rounds'] for s in private_stats])
+
+print(f"\n📈 EXITED vs PRIVATE COMPANIES COMPARISON:")
+print(f"  Exited Companies:")
+print(f"    • Average Total Funding: ${exited_avg_funding:.2f}M")
+print(f"    • Average Number of Rounds: {exited_avg_rounds:.1f}")
+print(f"  Private Companies:")
+print(f"    • Average Total Funding: ${private_avg_funding:.2f}M")
+print(f"    • Average Number of Rounds: {private_avg_rounds:.1f}")
+
+if exited_avg_funding > private_avg_funding:
+    funding_diff = ((exited_avg_funding - private_avg_funding) / private_avg_funding) * 100
+    print(f"\n  💡 Exited companies raised {funding_diff:.1f}% MORE funding on average")
+else:
+    funding_diff = ((private_avg_funding - exited_avg_funding) / exited_avg_funding) * 100
+    print(f"\n  💡 Private companies have raised {funding_diff:.1f}% MORE funding on average")
+    print(f"     This suggests current private leaders may be over-capitalized or waiting for better exit windows")
+
+print("\n4️⃣ EXIT EFFICIENCY ANALYSIS:")
+print("-"*100)
+
+# Calculate "exit efficiency" - valuation per dollar raised
+for stat in exited_stats:
+    if pd.notna(stat['exit_valuation']):
+        if pd.notna(stat['funding_before_exit']) and stat['funding_before_exit'] > 0:
+            efficiency = stat['exit_valuation'] / stat['funding_before_exit']
+            print(f"\n{stat['name']}:")
+            print(f"  Raised: ${stat['funding_before_exit']:.2f}M → Exited at: ${stat['exit_valuation']:.2f}M")
+            print(f"  🎯 Capital Efficiency: {efficiency:.2f}x return on invested capital")
+            
+            if efficiency > 10:
+                print(f"     ⭐ EXCEPTIONAL - Top-tier capital efficiency")
+            elif efficiency > 5:
+                print(f"     ✓ STRONG - Good return on capital")
+            elif efficiency > 2:
+                print(f"     → MODERATE - Adequate return")
+            else:
+                print(f"     ⚠️ LOW - Below typical venture returns")
+        elif stat['name'] == 'Catapult Sports':
+            # Special case: Catapult went public without traditional VC funding
+            print(f"\n{stat['name']}:")
+            print(f"  Direct IPO without prior VC funding")
+            print(f"  Exit Valuation: ${stat['exit_valuation']:.2f}M")
+            print(f"  💡 UNIQUE PATH - Bootstrapped or angel-funded to IPO")
+            print(f"     This represents an alternative path to public markets without institutional VC")
+
+print("\n" + "="*100)
 print("4. EXIT TRENDS & PATTERNS")
 print("="*100)
 
@@ -295,7 +455,7 @@ print("""
    • GOQii: 9 rounds, may need exit soon
 
 7. FAILURE RATE
-   • Zero failures out of 14 companies (0%)
+   • Zero failures out of 13 companies (0%)
    • Exceptionally low failure rate suggests strong sector fundamentals
    • All non-exited companies still generating revenue
    • Market has capacity for multiple successful players
@@ -333,7 +493,7 @@ MEDIUM PROBABILITY:
     - Could consolidate with competitor
 
 LOW PROBABILITY (Near Term):
-  • Recent entrants (Ultrahuman, Playmaker, ThingX, Pulsetto)
+  • Recent entrants (Ultrahuman, Playermaker, ThingX, Pulsetto)
     - Too early stage
     - Need more time to mature
 
@@ -345,7 +505,7 @@ MARKET IMPLICATIONS:
    • Requires patient capital
 
 2. CONSOLIDATION LIKELY COMING
-   • 11 private companies in similar space
+   • 9 private companies in similar space
    • Market can't support this many long-term
    • Expect M&A wave in next 2-5 years
 
@@ -363,8 +523,8 @@ MARKET IMPLICATIONS:
 # Create visualizations
 print("\n\nGenerating exit analysis visualizations...")
 
-fig = plt.figure(figsize=(24, 18))
-gs = fig.add_gridspec(4, 4, hspace=0.35, wspace=0.35)
+fig = plt.figure(figsize=(28, 24))
+gs = fig.add_gridspec(6, 4, hspace=0.35, wspace=0.35)
 
 # 1. Exit Status Pie Chart
 ax1 = fig.add_subplot(gs[0, 0])
@@ -570,18 +730,168 @@ ax6.set_xlabel('Exit Readiness Score', fontsize=10, fontweight='bold')
 ax6.set_title('Exit Likelihood Ranking\n(Years × 0.5 + Rounds × 0.8)', fontweight='bold', fontsize=11)
 ax6.grid(axis='x', alpha=0.3)
 
-plt.suptitle('EXIT ANALYSIS: Wearable Tech Sector - 4 IPO Exits (Fitbit, Catapult, Zepp Health, Peloton)', fontsize=18, fontweight='bold', y=0.995)
+# NEW CORRELATION VISUALIZATIONS
+
+# 7. Funding vs Exit Valuation Scatter Plot
+ax7 = fig.add_subplot(gs[4, 0:2])
+exited_for_plot = [s for s in exited_stats if pd.notna(s['funding_before_exit']) and pd.notna(s['exit_valuation'])]
+if len(exited_for_plot) > 0:
+    funding_vals = [s['funding_before_exit'] for s in exited_for_plot]
+    exit_vals = [s['exit_valuation'] for s in exited_for_plot]
+    names_exit = [s['name'] for s in exited_for_plot]
+    
+    ax7.scatter(funding_vals, exit_vals, s=300, alpha=0.7, c='#2ecc71', edgecolors='black', linewidth=2)
+    
+    # Add trend line if we have enough data points
+    if len(funding_vals) >= 2:
+        z = np.polyfit(funding_vals, exit_vals, 1)
+        p = np.poly1d(z)
+        x_line = np.linspace(min(funding_vals), max(funding_vals), 100)
+        ax7.plot(x_line, p(x_line), "r--", alpha=0.8, linewidth=2, label=f'Trend Line')
+        
+        # Add correlation coefficient
+        corr = np.corrcoef(funding_vals, exit_vals)[0, 1]
+        ax7.text(0.05, 0.95, f'Correlation: {corr:.3f}', transform=ax7.transAxes,
+                verticalalignment='top', bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8),
+                fontsize=11, fontweight='bold')
+    
+    # Label points
+    for i, name in enumerate(names_exit):
+        ax7.annotate(name, (funding_vals[i], exit_vals[i]), fontsize=9, ha='right', va='bottom',
+                    fontweight='bold')
+    
+    ax7.set_xlabel('Total Funding Before Exit ($M)', fontsize=11, fontweight='bold')
+    ax7.set_ylabel('Exit Valuation ($M)', fontsize=11, fontweight='bold')
+    ax7.set_title('Funding vs Exit Valuation Correlation', fontweight='bold', fontsize=13)
+    ax7.grid(alpha=0.3)
+    ax7.legend()
+
+# 8. Exit Multiples Bar Chart
+ax8 = fig.add_subplot(gs[4, 2:])
+multiples_data = []
+for stat in exited_stats:
+    if pd.notna(stat['exit_valuation']):
+        # Handle special case: Catapult went public without prior VC funding
+        if pd.notna(stat['funding_before_exit']) and stat['funding_before_exit'] > 0:
+            multiple = stat['exit_valuation'] / stat['funding_before_exit']
+            multiples_data.append((stat['name'], multiple, stat['exit_year'], False))
+        elif stat['name'] == 'Catapult Sports' and (not pd.notna(stat['funding_before_exit']) or stat['funding_before_exit'] == 0):
+            # Catapult: Direct IPO without prior VC rounds - show as special case
+            multiples_data.append((stat['name'], 0, stat['exit_year'], True))  # 0 as placeholder for direct IPO
+
+if len(multiples_data) > 0:
+    multiples_data.sort(key=lambda x: x[1], reverse=True)
+    names_mult = [m[0] for m in multiples_data]
+    multiples = [m[1] for m in multiples_data]
+    years_mult = [m[2] for m in multiples_data]
+    is_direct_ipo = [m[3] for m in multiples_data]
+    
+    colors_mult = ['#95a5a6' if is_special else '#2ecc71' if m > 5 else '#3498db' if m > 2 else '#e67e22' 
+                   for m, is_special in zip(multiples, is_direct_ipo)]
+    bars = ax8.barh(range(len(names_mult)), multiples, color=colors_mult, alpha=0.7, edgecolor='black', linewidth=2)
+    
+    # Add value labels
+    for i, (name, mult, year, is_special) in enumerate(zip(names_mult, multiples, years_mult, is_direct_ipo)):
+        if is_special:
+            ax8.text(1, i, f'Direct IPO ({year})\n$55.5M valuation', va='center', fontsize=8, fontweight='bold')
+        else:
+            ax8.text(mult + 0.5, i, f'{mult:.1f}x ({year})', va='center', fontsize=9, fontweight='bold')
+    
+    ax8.set_yticks(range(len(names_mult)))
+    ax8.set_yticklabels(names_mult)
+    ax8.set_xlabel('Exit Multiple (Exit Val / Funding Raised)', fontsize=11, fontweight='bold')
+    ax8.set_title('Capital Efficiency: Exit Valuation / Total Funding', fontweight='bold', fontsize=13)
+    ax8.grid(axis='x', alpha=0.3)
+    
+    # Add reference lines
+    ax8.axvline(x=2, color='orange', linestyle='--', alpha=0.5, linewidth=2, label='2x (Minimum VC Return)')
+    ax8.axvline(x=5, color='green', linestyle='--', alpha=0.5, linewidth=2, label='5x (Strong Return)')
+    ax8.axvline(x=10, color='darkgreen', linestyle='--', alpha=0.5, linewidth=2, label='10x (Exceptional)')
+    ax8.legend(loc='lower right', fontsize=9)
+
+# 9. Exited vs Private Comparison
+ax9 = fig.add_subplot(gs[5, 0:2])
+comparison_data = {
+    'Avg Total\nFunding ($M)': [exited_avg_funding, private_avg_funding],
+    'Avg Number\nof Rounds': [exited_avg_rounds, private_avg_rounds]
+}
+
+x_pos = np.arange(len(comparison_data))
+width = 0.35
+
+for i, (label, values) in enumerate(comparison_data.items()):
+    offset = width * (i - 0.5)
+    ax9.bar(offset, values[0], width, label='Exited' if i == 0 else '', color='#2ecc71', alpha=0.7, edgecolor='black')
+    ax9.bar(offset + 1, values[1], width, label='Still Private' if i == 0 else '', color='#3498db', alpha=0.7, edgecolor='black')
+    
+    # Add value labels
+    ax9.text(offset, values[0] + max(values) * 0.02, f'{values[0]:.1f}', ha='center', va='bottom', fontweight='bold', fontsize=10)
+    ax9.text(offset + 1, values[1] + max(values) * 0.02, f'{values[1]:.1f}', ha='center', va='bottom', fontweight='bold', fontsize=10)
+
+ax9.set_xticks([0, 1])
+ax9.set_xticklabels(list(comparison_data.keys()))
+ax9.set_ylabel('Value', fontsize=11, fontweight='bold')
+ax9.set_title('Exited vs Private Companies: Funding Comparison', fontweight='bold', fontsize=13)
+ax9.legend(loc='upper right', fontsize=10)
+ax9.grid(axis='y', alpha=0.3)
+
+# 10. Valuation Growth to Exit
+ax10 = fig.add_subplot(gs[5, 2:])
+val_change_data = []
+for stat in exited_stats:
+    if pd.notna(stat['latest_pre_exit_val']) and pd.notna(stat['exit_valuation']):
+        val_change_pct = ((stat['exit_valuation'] - stat['latest_pre_exit_val']) / stat['latest_pre_exit_val']) * 100
+        val_change_data.append((stat['name'], val_change_pct, stat['latest_pre_exit_val'], stat['exit_valuation'], False))
+    elif stat['name'] == 'Catapult Sports' and pd.notna(stat['exit_valuation']):
+        # Catapult: Direct IPO without prior valuation data
+        val_change_data.append((stat['name'], 0, 0, stat['exit_valuation'], True))
+
+if len(val_change_data) > 0:
+    val_change_data.sort(key=lambda x: x[1], reverse=True)
+    names_val = [v[0] for v in val_change_data]
+    changes_pct = [v[1] for v in val_change_data]
+    is_direct_ipo_val = [v[4] for v in val_change_data]
+    
+    colors_val = ['#95a5a6' if is_special else '#2ecc71' if c > 0 else '#e74c3c' 
+                  for c, is_special in zip(changes_pct, is_direct_ipo_val)]
+    bars = ax10.barh(range(len(names_val)), changes_pct, color=colors_val, alpha=0.7, edgecolor='black', linewidth=2)
+    
+    # Add value labels
+    for i, (pct, pre_val, exit_val, is_special) in enumerate(zip(changes_pct, [v[2] for v in val_change_data], 
+                                                                   [v[3] for v in val_change_data], is_direct_ipo_val)):
+        if is_special:
+            label = f'Direct IPO\n(No pre-IPO val)\nIPO: ${exit_val:.0f}M'
+            ax10.text(5, i, label, va='center', ha='left', fontsize=8, fontweight='bold')
+        else:
+            label = f'{pct:+.1f}%\n(${pre_val:.0f}M→${exit_val:.0f}M)'
+            ax10.text(pct + (5 if pct > 0 else -5), i, label, va='center', ha='left' if pct > 0 else 'right', 
+                     fontsize=8, fontweight='bold')
+    
+    ax10.set_yticks(range(len(names_val)))
+    ax10.set_yticklabels(names_val)
+    ax10.set_xlabel('Valuation Change at Exit (%)', fontsize=11, fontweight='bold')
+    ax10.set_title('Pre-Exit Valuation vs Exit Valuation Change', fontweight='bold', fontsize=13)
+    ax10.grid(axis='x', alpha=0.3)
+    ax10.axvline(x=0, color='black', linestyle='-', linewidth=1)
+
+plt.suptitle('EXIT ANALYSIS: Wearable Tech Sector - Funding & Valuation Correlation to Exits', fontsize=18, fontweight='bold', y=0.995)
 plt.savefig('exit_trends_analysis.png', dpi=300, bbox_inches='tight')
 print("✓ Visualization saved as 'exit_trends_analysis.png'")
 
 print("\n" + "="*100)
 print("ANALYSIS COMPLETE")
 print("="*100)
-print("\n💡 SUMMARY: The wearable tech sector has produced 4 IPO exits (26.7% exit rate):")
-print("   • Catapult Sports (2014, $55.5M) - smaller sports tech exit")
-print("   • Fitbit (2015, $4.1B) - BLOCKBUSTER, set the benchmark for the sector")
-print("   • Zepp Health (2018) - Chinese manufacturer, Xiaomi wearables")
-print("   • Peloton (2019) - connected fitness platform, well-known brand")
+# Calculate actual exit rate
+actual_exit_rate = (num_exited / total_companies) * 100
+print(f"\n💡 SUMMARY: The wearable tech sector has produced {num_exited} exits ({actual_exit_rate:.1f}% exit rate) out of {total_companies} companies:")
+if num_exited >= 1:
+    print("   • Catapult Sports (2014, $55.5M) - IPO exit")
+if num_exited >= 2:
+    print("   • Fitbit (2015, $4.1B) - BLOCKBUSTER IPO, set the benchmark for the sector")
+if num_exited >= 3:
+    print("   • Zepp Health (2018) - IPO exit, Chinese manufacturer, Xiaomi wearables")
+if num_exited >= 4:
+    print("   • Peloton (2019) - IPO exit, connected fitness platform, well-known brand")
 print()
 print("   The sector shows a favorable exit environment in the 2014-2019 window. However,")
 print("   no new IPOs since 2019 (5+ years) reflects challenging public market conditions.")

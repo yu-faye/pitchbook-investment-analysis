@@ -19,8 +19,7 @@ company_ids = [
     "56236-96",    # Catapult Sports - IPO 2014
     "65652-22",    # GOQii
     "107433-19",   # Empatica
-    "171678-43",   # Sensifai
-    "494786-80",   # Playmaker
+    "142343-92",   # Playermaker
     "50982-94",    # Fitbit - IPO 2015
     "100191-79",   # Zepp Health - IPO 2018
     "61931-08"     # Peloton - IPO 2019
@@ -36,8 +35,7 @@ company_names = {
     "56236-96": "Catapult Sports",
     "65652-22": "GOQii",
     "107433-19": "Empatica",
-    "171678-43": "Sensifai",
-    "494786-80": "Playmaker",
+    "142343-92": "Playermaker",
     "50982-94": "Fitbit",
     "100191-79": "Zepp Health",
     "61931-08": "Peloton"
@@ -298,7 +296,7 @@ for idx, (i, row) in enumerate(entry_df_plot.iterrows()):
 
 ax1.set_yticks([])
 ax1.set_xlabel('Year', fontsize=12, fontweight='bold')
-ax1.set_title('Market Entry Timeline: All 14 Companies', fontweight='bold', fontsize=14)
+ax1.set_title('Market Entry Timeline: All 13 Companies', fontweight='bold', fontsize=14)
 ax1.grid(alpha=0.3, axis='x')
 ax1.set_ylim(-1, len(entry_df_plot))
 
